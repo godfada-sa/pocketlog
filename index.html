@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15251f"><meta name="description" content="Pocketlog is a simple array-powered expense tracker.">
+  <title>Pocketlog — know where it goes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+  <div class="loader" id="loader"><span>POCKETLOG</span></div>
+  <header class="page-width header"><a class="brand" href="#top"><i>₵</i>Pocketlog</a><nav><a href="#activity">Activity</a><a href="#about">About</a></nav><button id="clear-all" class="header-button">Clear all</button></header>
+  <main id="top" class="page-width">
+    <section class="hero"><div><p class="eyebrow">Your money, in plain sight</p><h1>Know where<br><em>it goes.</em></h1><p class="lead">A simple place to log the small things before they become the big things.</p></div><div class="hero-total"><span>This month</span><strong id="hero-total">GH₵ 0.00</strong><small id="expense-count">0 expenses logged</small></div></section>
+    <section class="tracker" id="activity"><div class="section-head"><div><p class="eyebrow">Your activity</p><h2>Recent expenses</h2></div><select id="filter" aria-label="Filter expenses"><option value="all">All categories</option><option value="Food">Food</option><option value="Transport">Transport</option><option value="Bills">Bills</option><option value="Other">Other</option></select></div>
+      <div class="tracker-grid"><form class="add-form" id="expense-form"><h3>Add an expense</h3><label for="expense-name">What was it?</label><input id="expense-name" required maxlength="50" placeholder="e.g. Lunch with friends"><div class="form-row"><div><label for="expense-amount">Amount</label><input id="expense-amount" required type="number" min="0.01" step="0.01" placeholder="0.00"></div><div><label for="expense-category">Category</label><select id="expense-category"><option>Food</option><option>Transport</option><option>Bills</option><option>Other</option></select></div></div><button class="primary" type="submit">Add expense <span>↗</span></button></form><div class="expense-list" id="expense-list"><p class="empty">No expenses yet.<br>Add the first one on the left.</p></div></div>
+    </section>
+    <section class="insight" id="about"><div><p class="eyebrow">The simple idea</p><h2>One transaction.<br>One array item.</h2></div><p>Every expense is stored in a list, then the total is calculated in one pass. Add, filter, remove — the structure stays easy to follow.</p><div class="category-total"><span>Biggest category</span><strong id="biggest-category">—</strong><small id="biggest-amount">GH₵ 0.00</small></div></section>
+  </main>
+  <footer class="page-width footer"><strong>Pocketlog</strong><span>Made for a data structures assignment · 2026</span></footer>
+  <div class="toast" id="toast" hidden></div>
+</body>
+</html>
